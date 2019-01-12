@@ -44,17 +44,21 @@ body {
 nav {
   box-shadow: 0px 2px 6px #333;
 }
-.text-container {
+.outer-container {
   width: 100%;
-  background: rgb(211, 209, 209);
+  background: #4caf4f5b;
   padding-bottom: 20px;
   padding-top: 20px;
-  border: 1px solid #000;
+  border: 2px solid rgb(163, 163, 163);
 }
 .text {
   width: 95%;
   margin: auto;
   padding: 10px;
+}
+.text p {
+  font-family: verdana;
+  font-size: 1.2em;
 }
 .text h1 {
   text-align: center;
@@ -67,20 +71,23 @@ section {
   margin: auto;
 }
 .projects-container {
-  display: flex;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
   width: 90%;
   margin: auto;
 }
 .card {
   width: 99%;
+  /* min-height: 612px; */
   margin: auto;
   background: #fff;
   border: 1px solid #000;
-  margin-left: 10px;
 }
-.card:first-child {
-  margin-left: 0px;
-}
+/* .card:first-child {
+  margin-left: 0;
+} */
 .card-img {
   margin-top: -30px;
   width: 100%;
@@ -107,6 +114,38 @@ h1.card-heading {
   text-align: center;
   font-size: 2em;
 }
+h1.brand {
+  font-size: calc(1.5em + 1.5vw);
+}
+@media screen and (min-width: 1238px) {
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 15px;
+    width: 90%;
+    margin: auto;
+  }
+  .card {
+    max-height: 600px;
+  }
+  .hero-image {
+    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 25%;
+  }
+
+  img {
+    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 25%;
+  }
+}
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
@@ -117,12 +156,6 @@ h1.card-heading {
     display: block;
   }
 }
-img {
-  margin-top: 5px;
-  width: 100%;
-  margin-bottom: 30px;
-}
-
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
   .topnav.responsive {
@@ -135,6 +168,7 @@ img {
   }
   .topnav.responsive a {
     float: none;
+    text-align: center;
     display: block;
     text-align: left;
   }
