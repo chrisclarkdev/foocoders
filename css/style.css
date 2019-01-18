@@ -108,7 +108,6 @@ body {
 nav {
   box-shadow: 0px 2px 6px #333;
 }
-
 /* controls the outer div container  */
 .outer-container {
   width: 100%;
@@ -260,17 +259,26 @@ input[type="submit"] {
   display: table;
   clear: both;
 }
-.flex-row {
+.why--us__flex-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1em;
+  grid-template-columns: 1fr;
   width: 70%;
   margin: auto;
 }
 .why--us__card {
   display: grid;
-  grid-template-rows: 1fr 1fr 200px;
+  width: 70%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 250px;
   /* border: 1px solid var(--main-orange-color); */
+}
+.why--us__card:hover {
+  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+  -moz-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  -o-transform: translateY(-20px);
+  -webkit-transform: translateY(20deg);
 }
 .why--us__card--title {
   text-align: center;
@@ -279,13 +287,12 @@ input[type="submit"] {
   font-size: 2em;
 }
 .why--us__card-p {
-  width: 70%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 1em;
   font-family: Verdana, Geneva, sans-serif;
 }
-.fa {
+.why--us__fa {
   color: var(--main-orange-color);
   display: flex;
   justify-content: center;
@@ -299,8 +306,7 @@ input[type="submit"] {
     margin-top: 0;
   }
 }
-@media screen and (min-width: 1217px) {
-}
+
 @media screen and (min-width: 768px) {
   .projects-container {
     display: grid;
@@ -310,7 +316,25 @@ input[type="submit"] {
   h1.card-heading {
     font-size: 1.5em;
   }
+  .why--us__flex-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+  }
+  .why--us__card {
+    border: var(--main-blue-color) 1px solid;
+  }
 
+  .why--us__card:hover {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
   .pricing {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -350,13 +374,23 @@ input[type="submit"] {
   .price-card:hover {
     transform: scale(1.04);
   }
-
   .bronze p,
   .gold p,
   .silver p {
     font-size: 3em;
   }
-
+  .footer--foo {
+    background: var(--main-orange-color);
+    height: 50px;
+  }
+  .footer--foo__link {
+    color: #fff;
+    font-family: verdana;
+    text-align: center;
+  }
+  .footer--foo__link a {
+    color: #fff;
+  }
   .pricing li {
     text-align: left;
     -moz-list-style: none;
@@ -385,6 +419,17 @@ input[type="submit"] {
     margin-bottom: 30px;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 25%;
+  }
+  .why--us__flex-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    overflow: hidden;
+    width: 70%;
+    margin: auto;
+  }
+  .why--us__card {
+    border: none;
   }
 }
 img {
