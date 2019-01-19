@@ -4,6 +4,9 @@
   --teriary-blue-color: #8fc5e7;
   --off-white-text: #f5f5f5;
 }
+li {
+  list-style: none;
+}
 body {
   background: rgb(248, 245, 245);
   height: 2000px;
@@ -299,6 +302,20 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
 }
+.pricing {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+.pricing li {
+  text-align: left;
+  margin-left: px;
+  font-size: 1.3em;
+  line-height: 2.1em;
+}
+pricing h2 {
+  font-weight: 700;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25,
@@ -308,7 +325,6 @@ input[type="submit"] {
     margin-top: 0;
   }
 }
-
 @media screen and (min-width: 768px) {
   .projects-container {
     display: grid;
@@ -339,12 +355,10 @@ input[type="submit"] {
     grid-template-columns: 1fr 1fr;
   }
   .pricing li {
-    text-align: left;
-    list-style: none;
+    text-align: center;
     font-size: 1.5em;
     line-height: 2.5em;
   }
-
   .bronze p,
   .gold p,
   .silver p {
@@ -362,7 +376,6 @@ input[type="submit"] {
   }
   .pricing h2 {
     font-size: 2.5em;
-    border-bottom: 10px solid #fff;
   }
   .price-card {
     width: 99%;
@@ -391,7 +404,6 @@ input[type="submit"] {
     font-family: verdana;
     text-align: center;
     text-decoration: none;
-    -moz-text-decoration-line: none;
   }
   .footer--foo__link a {
     text-decoration: none;
@@ -401,10 +413,6 @@ input[type="submit"] {
   }
   .pricing li {
     text-align: left;
-    -moz-list-style: none;
-    -ms-list-style: none;
-    -webkit-list-style: none;
-    list-style: none;
     font-size: 2em;
     line-height: 2.5em;
   }
