@@ -10,20 +10,3 @@ function myFunction() {
 window.onscroll = function() {
   scrollFunction();
 };
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop < 520 ||
-    document.documentElement.scrollTop < 520
-  ) {
-    document.getElementById("top").style.display = "none";
-  } else {
-    document.getElementById("top").style.display = "block";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
