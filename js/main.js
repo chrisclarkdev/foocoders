@@ -1,12 +1,7 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
 }
-window.onscroll = function() {
-  scrollFunction();
-};
+gtag("js", new Date());
+
+gtag("config", "UA-132874071-1");

@@ -27,19 +27,30 @@
       Foococders.com, Web Developers in Kent, Ashford, New Romney, Folkestone
       and Canterbury
     </title>
+     
   </head>
-  <body onload="myFunction()">
-    <nav class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a> 
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#prices">Pricing</a> 
-      <a href="#contact">Contact</a>
-      <a  class="navbar--tel__right"href="tel:+447713610918">07713 610918</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </nav>
+  <body>
+    <div class="nav">
+      <div class="nav-header">
+        <div class="nav-title">
+         <span class="title-foo">Foo</span><span class="title-coder">Coders</span>
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
     <div class="scrolling-box">
     <section class="hero" id="home">
       <img
@@ -226,13 +237,19 @@
       </div>
       </div>
     </section>
-    <button class="top" id="top">Top</button>
     <footer class="footer--foo">
       <p class="footer--foo__link"><a href="https://foocoders.com">&copy; 2019 foocoders.com</a></p>
-    </footer>
-    <script src="js/main.js"></script>
-    
+      <div class="icon__footer">
+      <i class="fa fa-facebook fa-2x footer__icon footer__icon--color"></i>
+      <i class="fa fa-twitter  fa-2x footer__icon footer__icon--color"></i>
+      <i class="fa fa-pinterest fa-2x footer__icon footer__icon--color"></i>
+      <i class="fa fa-instagram fa-2x footer__icon footer__icon--color"></i>
+      </div>
 
+
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132874071-1"></script>
+    <script src="js/main.js"></script>
   </body>
 
 </html>

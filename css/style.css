@@ -1,8 +1,9 @@
 :root {
   --main-orange-color: #f65b19;
   --main-blue-color: #2b8ecc;
-  --teriary-blue-color: #8fc5e7;
+  --teriary-blue-color: rgb(141, 196, 230);
   --off-white-text: #f5f5f5;
+  --nav-bg-color: rgb(76, 77, 76);
 }
 li {
   list-style: none;
@@ -13,17 +14,7 @@ body {
   margin: 0;
   padding: 0;
 }
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #09b1ed;
-  overflow: hidden;
-  position: fixed;
-  z-index: 10;
-  margin: 0;
-  width: 100%;
-}
-.navbar--tel__right a {
-  /* ################################## */
+.navbar__tel--right a {
   display: flex;
   justify-content: flex-end;
 }
@@ -93,28 +84,117 @@ body {
   width: 15%;
   margin: auto;
 }
-/* Change the color of links on hover */
-.topnav a:hover {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "segoe ui";
+}
+
+.nav {
+  height: 51px;
+  width: 100%;
+  background-color: var(--nav-bg-color);
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
   color: #fff;
-  background: #ed4509;
+  padding: 10px 10px 10px 10px;
 }
-/* custom color for webpage url links */
-
-.inline-url {
+.nav-title {
+  margin-top: 1px;
   color: var(--main-orange-color);
+  font-family: "Anton", sans-serif;
 }
-/* Add an active class to highlight the current page */
-.active {
-  background-color: #ed4509;
-  color: white;
+.title-coder {
+  color: var(--main-blue-color);
+  font-size: 1.3em;
 }
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.title-foo {
+  color: var(--main-orange-color);
+  font-size: 1.3em;
+}
+.nav > .nav-btn {
   display: none;
 }
-nav {
-  box-shadow: 0px 2px 6px #333;
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: var(--main-blue-color);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover {
+    background-color: var(--main-blue-color);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: var(--main-orange-color);
+    height: 0px;
+    transition: all 0.2s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) + .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked + .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
 }
 /* controls the outer div container  */
 .outer-container {
@@ -413,6 +493,19 @@ pricing h2 {
   .footer--foo__link a {
     color: #fff;
   }
+  .footer__icon--color {
+    position: relative;
+    right: 0;
+    color: #fff;
+  }
+  .footer__icon {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .icon__footer {
+    position: absolute;
+    right: 50px;
+  }
   .pricing li {
     text-align: left;
     font-size: 2em;
@@ -457,63 +550,8 @@ pricing h2 {
 img {
   margin-bottom: 30px;
 }
-#top {
-  background: #2e79bd;
-  width: 50px;
-  height: 50px;
-  visibility: hidden;
-  color: var(--main-orange-color);
-  font-size: 1.2em;
-  border-radius: 5px;
-  position: fixed;
-  z-index: 99;
-  bottom: 35px;
-  right: 35px;
-  transform: rotate(-15deg);
-  transform-origin: bottom left;
-  box-shadow: 0px 60px 57px #344;
-
-  -webkit-transition: 300ms ease all;
-  -moz-transition: 300ms ease all;
-  -o-transition: 300ms ease all;
-  transition: 300ms ease all;
-}
-#top:hover {
-  transform: rotate(0deg);
-  box-shadow: 0px 0px 0px #fff;
-}
 
 .form-class {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: fixed;
-  }
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    text-align: center;
-    display: block;
-    text-align: left;
-  }
-  .topnav {
-    position: fixed;
-  }
 }
